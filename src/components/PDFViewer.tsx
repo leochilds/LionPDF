@@ -19,13 +19,18 @@ export default function PDFViewer({ buffer, scale, currentPage, onNumPagesChange
 
   useEffect(() => {
     let active = true;
+    let localDoc: pdfjsLib.PDFDocumentProxy | null = null;
+
     const loadPdf = async () => {
       try {
         const loadingTask = pdfjsLib.getDocument({ data: buffer });
         const doc = await loadingTask.promise;
         if (active) {
+          localDoc = doc;
           setPdfDoc(doc);
           onNumPagesChange(doc.numPages);
+        } else {
+          doc.destroy();
         }
       } catch (e) {
         console.error("Error loading PDF:", e);
@@ -35,8 +40,8 @@ export default function PDFViewer({ buffer, scale, currentPage, onNumPagesChange
 
     return () => {
       active = false;
-      if (pdfDoc) {
-        pdfDoc.destroy();
+      if (localDoc) {
+        localDoc.destroy();
       }
     };
   }, [buffer]);
