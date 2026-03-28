@@ -1,5 +1,7 @@
 # LionPDF
 
+> ⚠️ **EARLY STAGE PROJECT:** LionPDF is super new and actively being developed! Please expect bugs and missing features while we build out the core functionality. We'd love your feedback—please check the [Feedback & Contributions](#-feedback--contributions) section below.
+
 LionPDF is an open-source, purely privacy-conscious, and highly secure desktop PDF reader built with Tauri and React. 
 
 ## 🛡️ Security First
@@ -39,13 +41,20 @@ npm run tauri dev
 
 ## 📦 Building for Production
 
-Thanks to our CI pipeline, creating a release tag (e.g., `v1.0.0`) automatically compiles and creates installers for all major platforms (Windows `.msi`, macOS `.dmg`/`.app`, Linux `.AppImage`/`.deb`).
+Thanks to our CI pipeline, publishing a new Release on GitHub automatically compiles the app and attaches the installer binaries directly to the release page for all major platforms (Windows `.msi`, macOS `.dmg`/`.app`, Linux `.AppImage`/`.deb`).
 
 To build locally:
 ```bash
 npm run tauri build
 ```
 The output binaries will be generated inside `src-tauri/target/release/bundle/`.
+
+## 🗣️ Feedback & Contributions
+
+We actively encourage community feedback! 
+
+- Found a bug? Missing a feature? [Please submit an issue here.](https://github.com/leochilds/LionPDF/issues)
+- Want to contribute code? Awesome! We'd love for you to submit your own fixes. Please see our [CONTRIBUTING.md](./CONTRIBUTING.md) for details on our branching and versioning strategy. You can open a Pull Request [on our main repository](https://github.com/leochilds/LionPDF).
 
 ## 📜 License
 This project is licensed under the terms of the MIT License.

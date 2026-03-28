@@ -2,6 +2,16 @@
 
 Welcome! We are excited to have you contribute to LionPDF, a highly secure, privacy-focused, cross-platform PDF reader built with Tauri and React.
 
+## Versioning Strategy
+
+LionPDF strictly follows [Semantic Versioning (SemVer)](https://semver.org/).
+Version tags are formatted as `vMAJOR.MINOR.PATCH`:
+- **MAJOR:** Incompatible API changes or massive architectural shifts.
+- **MINOR:** Adding new features in a backwards-compatible manner.
+- **PATCH:** Backwards-compatible bug fixes and minor tweaks.
+
+Since LionPDF is currently in an early development stage, the version starts at `v0.x.x`, meaning the core APIs are still solidifying and minor bugs may occur.
+
 ## Branching Strategy
 
 We follow **GitHub Flow**:
