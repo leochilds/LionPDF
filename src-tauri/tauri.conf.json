@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "tmpapp",
+  "productName": "LionPDF",
   "version": "0.1.0",
-  "identifier": "com.leo.tmpapp",
+  "identifier": "com.lionpdf.app",
   "build": {
     "beforeDevCommand": "npm run dev",
     "devUrl": "http://localhost:1420",
@@ -12,13 +12,13 @@
   "app": {
     "windows": [
       {
-        "title": "tmpapp",
-        "width": 800,
-        "height": 600
+        "title": "LionPDF",
+        "width": 1024,
+        "height": 768
       }
     ],
     "security": {
-      "csp": null
+      "csp": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self' ipc: tauri:; worker-src 'self' blob:;"
     }
   },
   "bundle": {
