@@ -1,8 +1,7 @@
 name: Release
 on:
-  push:
-    tags:
-      - 'v*'
+  release:
+    types: [published]
   workflow_dispatch:
 
 jobs:
@@ -29,7 +28,7 @@ jobs:
       - name: setup node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
 
       - name: install Rust stable
         uses: dtolnay/rust-toolchain@stable
@@ -50,9 +49,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tagName: app-v__VERSION__
-          releaseName: 'LionPDF v__VERSION__'
-          releaseBody: 'See the assets to download this version and install.'
-          releaseDraft: true
-          prerelease: false
+          # Automatically detects the github release and uploads the assets
+          releaseId: ${{ github.event.release.id }}
           args: ${{ matrix.args }}
